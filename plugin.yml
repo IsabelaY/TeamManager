@@ -1,0 +1,6 @@
+name: TeamManager
+main: xhizors.TeamManager.TeamManager
+version: 1.0
+description: >
+             Team Manager
+commands:
