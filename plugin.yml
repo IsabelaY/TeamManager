@@ -1,6 +1,10 @@
 name: TeamManager
-main: xhizors.TeamManager.TeamManager
+main: com.xhizors.TeamManager.TeamManager
 version: 1.0
 description: >
              Team Manager
 commands:
+  friendlyfiretoggle:
+    description: Toggle Wordfiter
+    permission: teammanager.friendlyfiretoggle
+    permission: /friendlyfiretoggle

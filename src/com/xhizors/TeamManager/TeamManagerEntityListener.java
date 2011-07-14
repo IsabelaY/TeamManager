@@ -21,6 +21,9 @@ public class TeamManagerEntityListener extends EntityListener {
 	
 	@Override
 	public void onEntityDamage(EntityDamageEvent event) {
+		if (teamManager.friendlyfire) {
+			return;
+		}
 		if (event instanceof EntityDamageByEntityEvent) {
 			EntityDamageByEntityEvent evt = (EntityDamageByEntityEvent) event;
 			if (evt.getEntity() instanceof Player && evt.getDamager() instanceof Player) {

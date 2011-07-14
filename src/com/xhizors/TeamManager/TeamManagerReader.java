@@ -25,7 +25,7 @@ public class TeamManagerReader {
 			String[] content = line.split("#");
 			if (content[0] != ""  && instance.getServer().getWorld(content[0]) != null && !worlds.contains(content[0])) {
 				worlds.add(content[0]);
-				TeamManager.log.info("[" + TeamManager.name + "] load world " + content[0]);
+				TeamManager.log.info("[" + TeamManager.name + "] loaded world " + content[0]);
 			}
 		}
 		
