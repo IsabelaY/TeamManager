@@ -33,14 +33,12 @@ public class TeamManagerEntityListener extends EntityListener {
 				Player damager = (Player) evt.getDamager();
 				Player damagee = (Player) event.getEntity();
 				PermissionHandler ph = teamManager.getPermissionHandler();
-				String[] groups = ph.getGroups(damagee.getWorld().getName(), damagee.getName());
-				for (String group : groups) {
-					if (ph.inSingleGroup(damager.getWorld().getName(), damager.getName(), group)) {
-						damager.sendMessage(ChatColor.RED + "Friendly Fire disabled");
-						event.setCancelled(true);
-						event.setDamage(0);
-						return;
-					}
+				String world = damagee.getWorld().getName();
+				if (ph.inGroup(world, damager.getName(), ph.getGroups(world, damagee.getName())[0])) {
+					damager.sendMessage(ChatColor.RED + "Friendly Fire disabled");
+					event.setCancelled(true);
+					event.setDamage(0);
+					return;
 				}
 			}
 		}
